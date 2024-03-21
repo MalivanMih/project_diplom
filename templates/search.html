@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %} Поиск по дате {% endblock %}
+{% block content%}
+    <form action="{{ url_for('search')}}" method="POST" class="form-control">
+    <p><i>Пожалуйста, заполните форму. Обязательные поля помечены </i><em>*</em></p>
+        <fieldset class="test">
+        <label>
+          <p align="center"> Введите дату <em>*</em></p>
+          <input type="date" value='' name="date"  required >
+        </label>
+            </fieldset>
+    <br>
+        <input type="submit" value="Поиск">
+        <br>
+        <br>
+<div class="row">
+        {% for post in result[::-1] %}
+    <div class="col-md-6">
+      <div class="test">
+        <div class="col p-4 d-flex flex-column position-static">
+          <p class="mb-0"><b>Журнал показаний</b></p>
+          <p class="card-text mb-auto"> Номер записи: {{post[0]}}</p>
+          <p class="card-text mb-auto"> Дежурный: {{post[1]}}</p>
+          <p class="card-text mb-auto"> Дата: {{post[2]}}</p><br>
+          <p class="card-text mb-auto" > <b>ДГУ</b></p>
+          <p class="card-text mb-auto"> Моточасы: {{post[3]}}</p>
+          <p class="card-text mb-auto"> Температура: {{post[4]}}</p>
+          <p class="card-text mb-auto"> Напряжение: {{post[5]}}</p>
+          <br>
+          <p class="card-text mb-auto" > <b>СПК</b></p>
+          <p class="card-text mb-auto"> Температура: {{post[6]}}</p>
+          <p class="card-text mb-auto"> Влажность: {{post[7]}}</p>
+          <br>
+          <p class="card-text mb-auto" > <b>Щитовая</b></p>
+          <p class="card-text mb-auto"> Напряжение ОВ: {{post[8]}}</p>
+          <p class="card-text mb-auto"> Напряжение ДВ: {{post[9]}}</p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+
+        </div>
+      </div>
+    </div>
+
+    {%endfor%}
+    </div>
+
+{%endblock%}

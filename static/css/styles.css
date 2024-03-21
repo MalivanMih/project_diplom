@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    background: url('../img/cod.png') repeat #fff;
+    background-size: cover;
+    background-position: center;
+    }
+
+header  {
+
+    top:0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    box-shadow: 0 5px 10px #000;
+
+    position: sticky;
+    z-index: 1000;
+    --webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+
+}
+
+header .logo {
+    font-size: 20px;
+    font-weight: 900;
+    color: #000;
+    transition: .5s;
+}
+
+header .logo:hover {
+    transform: scale(1.2);
+}
+
+header nav ul li {
+    position: relative;
+    float: left;
+}
+
+header nav ul li a {
+    padding: 15px;
+    color: #000;
+    font-size: 16px;
+    display: block;
+}
+
+header nav ul li a:hover {
+    background: #000;
+    color: #fff;
+}
+
+nav ul li ul {
+    position: absolute;
+    left: 0px;
+    width: 180px;
+    background: #fff;
+    display: none;
+}
+
+nav ul li ul li {
+    width: 80%;
+    border: 1px solid rgba(0,0,0,.1);
+}
+
+nav ul li:hover > ul {
+    display: initial;
+}
+
+.form-control{
+    background: #D3D3D3;
+}
+.col-md-6{
+    background: #D3D3D3;
+}
+
+
+.input_{
+    position: absolute;
+    left: 260px;
+    width: 180px;
+    background: #fff;
+    margin: 0px auto 0 20px;
+    }
+
+.col-md-6{
+width: 330px;
+}
+
+.test{
+border-width: 7px 7px 7px 7px;
+border-style: double;
+padding: 7px;
+border: 4mm ridge rgba(30, 144, 255, .6);
+}

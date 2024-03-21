@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %} Добавить показания {% endblock %}
+{% block content%}
+<form action="{{ url_for('add_values')}}" method="POST" class="form-control">
+    <p><i>Пожалуйста, заполните форму. Обязательные поля помечены </i><em>*</em></p>
+    <fieldset class="test">
+        <legend>ДГУ</legend>
+        <label>
+          <p align="center"> Дата <em>*</em></p>
+          <input type="date" value={{current_date}} name="date"  required >
+        </label>
+      <label>
+          <p align="center"> Моточасы  <em>*</em></p>
+          <input type="text" value="" name="motoclock"  required ><br>
+      </label>
+      <label>
+          <p align="center"> Температура <em>*</em></p>
+          <input type="text" value="" name="temp" required ><br>
+      </label>
+      <label>
+          <p align="center"> Напряжение <em>*</em></p>
+          <input type="text" value="" name="voltage" required ><br>
+      </label>
+</fieldset >
+    <br>
+    <fieldset class="test">
+        <legend>СПК</legend>
+        <label>
+          <p align="center"> Температура в помещении <em>*</em></p>
+          <input type="text" value="" name="temp_spk"  required ><br>
+        </label>
+        <label>
+          <p align="center"> Влажность в помещении <em>*</em></p>
+          <input type="text" value="" name="humidity" required ><br>
+        </label>
+    </fieldset>
+    <br>
+    <fieldset class="test">
+        <legend>Щитовая</legend>
+        <label>
+          <p align="center"> Напряжение ОВ <em>*</em></p>
+          <input type="text" value="" name="voltage_ov"  required ><br>
+        </label>
+        <label>
+          <p align="center"> Напряжение ДВ <em>*</em></p>
+          <input type="text" value="" name="voltage_db" required ><br>
+        </label>
+    </fieldset>
+    <br>
+    <fieldset class="test">
+        <legend>Дежурный</legend>
+        <select name="duty" required>
+            <option value="" selected disabled>Выберите фамилию</option>
+            <option value="Малицкий И.М.">Малицкий И.М.</option>
+            <option value="Иванов И.И.">Иванов И.И.</option>
+            <option value="Петров П.П.">Петров П.П.</option>
+        </select>
+    </fieldset>
+    <br>
+        <input type="submit" value="Отправить">
+
+
+
+{%endblock%}
